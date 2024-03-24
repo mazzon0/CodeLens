@@ -1,7 +1,10 @@
-#ifndef PLATFORM_H
-#define PLATFORM_H
+#ifndef PLATFORM_PLATFORM_H
+#define PLATFORM_PLATFORM_H
 
 #include "Compatibility.h"
+#ifdef LP_WINDOWS
+    #include "Windows/Win32.h"
+#endif
 
 class Platform {
     public:

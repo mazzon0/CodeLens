@@ -1,3 +1,6 @@
+#ifndef PLATFORM_WINDOWS_WIN32_H
+#define PLATFORM_WINDOWS_WIN32_H
+
 //#define NOGDICAPMASKS     // CC_*, LC_*, PC_*, CP_*, TC_*, RC_
 //#define NOVIRTUALKEYCODES // VK_*
 //#define NOWINMESSAGES     // WM_*, EM_*, LB_*, CB_*
@@ -30,7 +33,7 @@
 #define NOSOUND           // Sound driver routines
 #define NOTEXTMETRIC      // typedef TEXTMETRIC and associated routines
 #define NOWH              // SetWindowsHook and WH_*
-#define NOWINOFFSETS      // GWL_*, GCL_*, associated routines
+//#define NOWINOFFSETS      // GWL_*, GCL_*, associated routines
 #define NOCOMM            // COMM driver routines
 #define NOKANJI           // Kanji support stuff.
 #define NOHELP            // Help engine interface.
@@ -39,3 +42,6 @@
 #define NOMCX             // Modem Configuration Extensions
 
 #include <Windows.h>
+
+#endif
+ 

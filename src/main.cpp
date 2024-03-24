@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Editor/Editor.h"
 
 using namespace std;

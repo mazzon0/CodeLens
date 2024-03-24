@@ -8,13 +8,13 @@ add_executable(CodeLens
 target_include_directories(CodeLens PUBLIC
     "."
     "../ext/volk")
-#target_link_libraries(CodeLens PUBLIC volk)
+target_link_libraries(CodeLens PUBLIC volk)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
-# TODO
+    target_compile_definitions(CodeLens PUBLIC LC_RELEASE)
 endif()
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-# TODO
+    target_compile_definitions(CodeLens PUBLIC LC_DEBUG)
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")

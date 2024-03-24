@@ -1,10 +1,11 @@
+#include <iostream>
 #include "Platform/Window.h"
 #include "UI/UI.h"
 #include "Editor.h"
 
 void Editor::iInit() {
     //DeserializeData();
-    //std::cout << "Running CodeLens version" << GetVersion() << std::endl;
+    std::cout << "Init application" << std::endl;   //std::cout << "Running CodeLens version" << GetVersion() << std::endl;
 
     //Window window(GetWindowInfo());
     WindowData wndData{};
@@ -12,7 +13,10 @@ void Editor::iInit() {
     wndData.width = 700;
     wndData.height = 400;
     wndData.style = WindowStyle::MENU;
+
     window = Window(wndData);
+    window.Open();
+    std::cout << "Window created" << std::endl;
     
     UI::Init(); // UI::Init(window);
     // initialize other editor features

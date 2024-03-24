@@ -1,5 +1,5 @@
-#ifndef COMPATIBILITY_H
-#define COMPATIBILITY_H
+#ifndef PLATFORM_COMPATIBILITY_H
+#define PLATFORM_COMPATIBILITY_H
 
 #include <string>
 
@@ -9,26 +9,19 @@ struct WindowData {
     int width, height;
     std::string name;
     WindowStyle style;
+    bool defaultFullscreen;
 
     WindowData() {
         width = 0; height = 0;
         name = "Uninitialized";
         style = WindowStyle::MENU;
+        defaultFullscreen = false;
     }
 };
 
-#ifdef LP_WINDOWS
-#include "Windows/Win32.h"
-
-DWORD ToWinStyle(WindowStyle& style);
-#endif
-
-#ifdef LP_APPLE
-
-#endif
-
-#ifdef LP_LINUX
-
-#endif
+struct WindowRectangle {
+    uint32_t x, y;
+    uint32_t width, height;
+};
 
 #endif

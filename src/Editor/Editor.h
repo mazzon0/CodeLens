@@ -10,6 +10,7 @@ public:
     static void Destroy() { Get().iDestroy(); }
 
     static void Close() { Get().iClose(); }
+    static void ToggleFullscreen() { Get().iToggleFullscreen(); }   // TODO: remove
 
 private:
     static Editor& Get() {
@@ -23,8 +24,16 @@ private:
 
     void iClose() { running = false; }
 
+    void iToggleFullscreen() { // TODO: remove
+        if(window.IsFullscreen())
+            window.SetWindowed();
+        else
+            window.SetFullscreen();
+    }
+
     bool running;
     Window window;
 };
 
 #endif
+
